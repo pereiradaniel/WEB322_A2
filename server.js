@@ -1,8 +1,6 @@
 var express = require("express");
 var app = express();
 
-// express-handlebars
-const expbs = require('express-handlebars');
 // Require path module.
 var path = require("path");
 

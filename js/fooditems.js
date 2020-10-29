@@ -22,7 +22,7 @@ var items = [
         "price": 15,
         "imgName": "norma",
         "topPackage": true
-    },
+    }
     {
         "name": "Roast beef",
         "price": 22,
