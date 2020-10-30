@@ -37,15 +37,18 @@ app.post("/register-user", function(req, res) {
     // res.send(reply);
 
     const formData = req.body;
-    const dataReceived = "Form data:<br/>" + JSON.stringify(formData) + "<br/<br/>"
+    const dataReceived = "Form data:<br/>" + JSON.stringify(formData) + "<br/<br/>";
     res.send(dataReceived);
 });
 
 app.post("/login", function(req, res) {
     var reply='';
     reply += req.body.email;
-    reply += req.body.pword;
-    res.send(reply);
+    reply += req.body.password;
+    // res.send(reply);
+    const formData = req.body;
+    const dataReceived = "Form data:<br/>" + JSON.stringify(formData) + "<br/><br/>";
+    res.send(dataReceived);
 });
 
 app.get("/mealpackages", function(req,res) {
