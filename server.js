@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+const bodyParser = require('body-parser');
 
 // Require path module.
 var path = require("path");
@@ -12,6 +13,7 @@ function onHttpStart() {
 }
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // ROUTES
 app.get("/", function(req,res) {
@@ -32,7 +34,11 @@ app.post("/register-user", function(req, res) {
     reply += req.body.lname;
     reply += req.body.email;
     reply += req.body.pword;
-    res.send(reply);
+    // res.send(reply);
+
+    const formData = req.body;
+    const dataReceived = "Form data:<br/>" + JSON.stringify(formData) + "<br/<br/>"
+    res.send(dataReceived);
 });
 
 app.post("/login", function(req, res) {
